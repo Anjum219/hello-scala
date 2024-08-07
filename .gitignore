@@ -15,11 +15,16 @@ project/local-plugins.sbt
 .sbt-scripted/
 local.sbt
 
+# scalac specific
+**.class
+**.tasty
+
 # Bloop
 .bsp
 
 # VS Code
 .vscode/
+**.code-workspace
 
 # Metals
 .bloop/
