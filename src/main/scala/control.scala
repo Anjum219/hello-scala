@@ -26,3 +26,23 @@ def control() =
     if j == 'a'
   do
     println(s"i = $i, j = $j")
+
+  // for expression
+  val strings = List("apple", "banana", "orange")
+  val longCapStrings = for
+    str <- strings
+    if str.length > 5
+  yield
+    str.capitalize
+  println(longCapStrings)
+
+  // match expression
+  val tuples = List((1, "one"), (-2, "two"), (-9, "nine"), (0), ("tutu"))
+  val results = tuples.map(tuple => tuple match
+    case (a: Int, b: String) if a > 0 => s"positive $b"
+    case (a: Int, b: String) if a < 0 => s"negative $b"
+    case (a: Int, b: String) if a == 0 => "zero"
+    case (a: Int) => a
+    case _ => "others"
+  )
+  println(results)
